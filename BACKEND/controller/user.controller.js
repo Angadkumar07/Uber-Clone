@@ -16,11 +16,6 @@ module.exports.registerUser = async (req, res) => {
     return res.status(400).json({ message: "User already exists" });
   }
 
-  
-  if (existingCaptainByPlate) {
-    return res.status(400).json({ message: "Vehicle already exists" });
-  };
-
   const user = await userService.createUser({
     firstname: fullname.firstname,
     lastname: fullname.lastname,
